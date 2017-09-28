@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFRecipesApp.Pages.EditRecipePage"
+             xmlns:behavior="clr-namespace:XFRecipesApp.Behaviors"
+             Title="Foodie">
+    <ContentPage.Content>
+        <TableView Intent="Form" HasUnevenRows="True">
+            <TableView.Root>
+                <TableSection Title="Info">
+                    <EntryCell Label="Recipe Name"
+                               Text="Scrambled Eggs"
+                               HorizontalTextAlignment="End"/>
+                    <EntryCell Label="Prep Time"
+                               Text="5 mins"
+                               HorizontalTextAlignment="End"/>
+                    <EntryCell Label="Cook Time"
+                               Text="2 mins"
+                               HorizontalTextAlignment="End"/>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Orientation="Horizontal" 
+                                         Padding="10"
+                                         Spacing="10">
+                                <Label Text="Number of servings" 
+                                       VerticalOptions="Center"/>
+                                <Entry Text="2" 
+                                   HorizontalTextAlignment="End"
+                                   HorizontalOptions="FillAndExpand">
+                                   
+                                </Entry>
+                            </StackLayout>
+                            
+                        </ContentView>
+                    </ViewCell>
+                    
+                    
+                    <SwitchCell Text="Make again ?" On="True"/>
+                </TableSection>
+                <TableSection Title="Meal">
+                    <ViewCell>
+                        <ContentView>
+                            <Picker>
+                                <Picker.Items>
+                                    <x:String>Breakfast</x:String>
+                                    <x:String>Lunch</x:String>
+                                    <x:String>Dinner</x:String>
+                                    <x:String>Snack</x:String>
+                                </Picker.Items>
+                                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                            </Picker>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Ingredients">
+                    <ViewCell>
+                        <ContentView HeightRequest="100"
+                                     Margin="10">
+                            <Editor Text="8 eggs, 1/2 cup milk"/>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Directions">
+                    <ViewCell>
+                        <ContentView HeightRequest="100"
+                                     Margin="10">
+                            <Editor Text="Break eggs, mix in milk, por mixture"/>
+                        </ContentView>
+                    </ViewCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>
