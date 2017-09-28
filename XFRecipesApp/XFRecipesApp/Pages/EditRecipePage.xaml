@@ -27,7 +27,9 @@
                                 <Entry Text="2" 
                                    HorizontalTextAlignment="End"
                                    HorizontalOptions="FillAndExpand">
-                                   
+                                    <Entry.Behaviors>
+                                        <behavior:NumericEntryBehavior/>
+                                    </Entry.Behaviors>
                                 </Entry>
                             </StackLayout>
                             
