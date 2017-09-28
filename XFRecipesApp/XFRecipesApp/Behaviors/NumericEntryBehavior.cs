@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace XFRecipesApp.Behaviors
 {
-    class NumericEntryBehavior : Behavior<Entry>
+    public class NumericEntryBehavior : Behavior<Entry>
     {
         protected override void OnAttachedTo(Entry bindable)
         {

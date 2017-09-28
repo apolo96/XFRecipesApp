@@ -3,14 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFRecipesApp.Pages.EditRecipePage"
              xmlns:behavior="clr-namespace:XFRecipesApp.Behaviors"
+             xmlns:trigger="clr-namespace:XFRecipesApp.Triggers"
              Title="Foodie">
     <ContentPage.Content>
         <TableView Intent="Form" HasUnevenRows="True">
             <TableView.Root>
                 <TableSection Title="Info">
-                    <EntryCell Label="Recipe Name"
-                               Text="Scrambled Eggs"
-                               HorizontalTextAlignment="End"/>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Orientation="Horizontal" 
+                                         Padding="10"
+                                         Spacing="10">
+                                <Label Text="Recipe Name"
+                                       VerticalOptions="Center">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label"
+                                                     Binding="{Binding 
+                                            Source={x:Reference recipeNameEntry}, 
+                                            Path=IsFocused}" Value="True">
+                                            <Setter Property="TextColor" Value="Orange"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                                <Entry Text="Scrambled Eggs" 
+                                       x:Name="recipeNameEntry"
+                                       HorizontalTextAlignment="End"
+                                       HorizontalOptions="FillAndExpand">
+                                    <Entry.Triggers>
+                                        <EventTrigger Event="TextChanged">
+                                            <trigger:RequiredValidationTriggerAction/>
+                                        </EventTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
                     <EntryCell Label="Prep Time"
                                Text="5 mins"
                                HorizontalTextAlignment="End"/>
@@ -58,7 +85,24 @@
                     <ViewCell>
                         <ContentView HeightRequest="100"
                                      Margin="10">
-                            <Editor Text="8 eggs, 1/2 cup milk"/>
+                            <Editor Text="8 eggs, 1/2 cup milk">
+                                <Editor.Triggers>
+                                    <Trigger TargetType="Editor"
+                                             Property="IsFocused"
+                                             Value="True">
+                                        <Setter Property="BackgroundColor" 
+                                                Value="#FFF9C4"/>
+                                    </Trigger>
+                                    <Trigger TargetType="Editor"
+                                             Property="IsFocused"
+                                             Value="True">
+                                        <Setter Property="TextColor" 
+                                                Value="Black"/>
+                                        <Setter Property="FontAttributes" 
+                                                Value="Bold"/>
+                                    </Trigger>
+                                </Editor.Triggers>
+                            </Editor>
                         </ContentView>
                     </ViewCell>
                 </TableSection>
