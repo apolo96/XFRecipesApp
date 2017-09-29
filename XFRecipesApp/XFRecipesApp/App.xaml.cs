@@ -13,7 +13,10 @@ namespace XFRecipesApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new XFRecipesApp.Pages.RecipesListPage());
+            MainPage = new NavigationPage(new XFRecipesApp.Pages.RecipesListPage())
+            {
+                BarBackgroundColor = Color.FromHex("#3f51b5")
+            };
         }
 
         protected override void OnStart()
