@@ -13,7 +13,7 @@ namespace XFRecipesApp
         {
             InitializeComponent();
 
-            MainPage = new XFRecipesApp.Pages.EditRecipePage();
+            MainPage = new NavigationPage(new XFRecipesApp.Pages.RecipesListPage());
         }
 
         protected override void OnStart()
