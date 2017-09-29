@@ -33,7 +33,8 @@ namespace XFRecipesApp.Storage
                                 "8 large eggs\nHollandaise Sauce" + Environment.NewLine +
                                 "1/2 pound (16 slices) Canadian bacon" + Environment.NewLine +
                                 "4 English muffins, split in half, toasted",
-                            ImageName = "eggs_benedict.jpg"
+                            ImageName = "eggs_benedict.jpg",
+                            IsRecommended = false
                         },
                         new RecipesModel {
                             RecipeName="Blueberry Muffins",
@@ -45,7 +46,8 @@ namespace XFRecipesApp.Storage
                             Difficulty=Difficulty.Medium,
                             Directions="Preheat oven to 350 degrees.\n\nCombine dry ingredients and strain into a large bowl. Create a reservoir in the center. Combine liquid ingredients. Pour wet ingredients in the reservoir and gently fold ingredients together. Gently fold in the blueberries.\n\nPut 1/4 to 1/3 cup batter in each muffin cup.\n\n*Optional* sprinkle oats and sunflower seeds on top of batter and place in oven.\n\nAllow muffins to bake for 20-25 minutes. Remove from oven when muffin top appears golden and a toothpick put into muffin comes out clean.",
                             Ingredients="1 cup whole wheat white flour\n1 tbsp baking powder\n1 tbsp cinnamon\n1 1/2 cup milk\n2 beaten eggs\n1 stick of butter, melted\n1 cup fresh blueberries\n1 tsp vanilla extract\n12 paper muffin cups liners\nwhole oats and sunflower seeds to sprinkle (optional)",
-                            ImageName = "blueberry_muffins.jpg"
+                            ImageName = "blueberry_muffins.jpg",
+                            IsRecommended = false
                         },
                         new RecipesModel {
                             RecipeName="Burger",
@@ -57,7 +59,8 @@ namespace XFRecipesApp.Storage
                             Difficulty=Difficulty.Medium,
                             Directions="Fire up the grill\n\nPut the burgers on and cook until desired temperature\n\nServe with bun and condiments.",
                             Ingredients="Burgers, bun and condiments",
-                            ImageName = "burger.jpg"
+                            ImageName = "burger.jpg",
+                            IsRecommended = true
                         },
                         new RecipesModel {
                             RecipeName="Potato Salad",
@@ -69,7 +72,8 @@ namespace XFRecipesApp.Storage
                             Difficulty=Difficulty.Hard,
                             Directions="Cook potatoes until boiling and cook 30-35 minutes or until tender.\n\nDrain and when cooled off enough, peel and slice\n\nFry bacon until crisp.\n\nCook and stir onion in bacon drippings until tender and golden brown,\n\nstir in flour, sugar, salt, celery seed and pepper.  Cook over low heat stirring\n\nuntil bubbly.  Remove from heat, stir in water and vinegar, heat to boiling, stirring\n\nconstantly, boil for about a minute.\n\nCrumble bacon over sliced potatoes and carefully pour the hot mixture over\n\nthe bacon and potatoes, stirring to cover the potato slices.",
                             Ingredients="3 lbs of small red potatoes (salad potatoes)\n6 slices bacon\n3/4 cup chopped onion\n2 tbsp flour\n2 tbsp sugar\n2 tsp salt\n1/2 tsp celery seed\ndash pepper\n3/4 cup of water\n1/3 cup vinegar",
-                            ImageName = "blueberry_muffins.jpg"
+                            ImageName = "blueberry_muffins.jpg",
+                            IsRecommended = false
                         },
                         new RecipesModel {
                             RecipeName="Spicy Ham",
@@ -81,7 +85,8 @@ namespace XFRecipesApp.Storage
                             Difficulty=Difficulty.Hard,
                             Directions="Preheat oven to 425°.\n\nTrim fat and rind from ham half. Score outside of ham in a diamond pattern. Place ham on a broiler pan coated with cooking spray. Combine jelly and remaining ingredients, stirring with a whisk until well blended. Brush about one-third of jelly mixture over ham.\n\nBake at 425° for 5 minutes. Reduce oven temperature to 325° (do not remove ham from oven); bake an additional 45 minutes, basting ham with jelly mixture every 15 minutes. Transfer ham to a serving platter; let stand 15 minutes before slicing.",
                             Ingredients="1 (5 1/2- to 6-pound) 33%-less-sodium smoked, fully cooked ham half\nCooking spray\n1/2 cup red pepper jelly\n1/2 cup pineapple preserves\n1/4 cup packed brown sugar\n1/4 teaspoon ground cloves",
-                            ImageName = "eggs_benedict.jpg"
+                            ImageName = "eggs_benedict.jpg",
+                            IsRecommended = true
                         }
                     };
                 }

@@ -27,6 +27,8 @@ namespace XFRecipesApp.Models
         public string Directions { get; set; }
 
         public string ImageName { get; set; }
+
+        public bool IsRecommended { get; set; }
     }
 
     public static class Difficulty

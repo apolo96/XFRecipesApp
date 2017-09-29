@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\NumericEntryBehavior.cs" />
+    <Compile Include="DataTemplateSelectors\RecipeDataTemplateSelector.cs" />
     <Compile Include="Models\RecipesGroupingModel.cs" />
     <Compile Include="Models\RecipesModel.cs" />
     <Compile Include="Pages\EditRecipePage.xaml.cs">
@@ -52,6 +53,12 @@
     <Compile Include="Triggers\RequiredValidationTriggerAction.cs" />
     <Compile Include="ValueConverters\RecipeToColorValueConverter.cs" />
     <Compile Include="ValueConverters\RecipeToImageValueConverter.cs" />
+    <Compile Include="ViewCells\RecipeCell.xaml.cs">
+      <DependentUpon>RecipeCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCells\RecommendedRecipeCell.xaml.cs">
+      <DependentUpon>RecommendedRecipeCell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -89,6 +96,18 @@
     <EmbeddedResource Include="Images\blueberry_muffins.jpg" />
     <EmbeddedResource Include="Images\burger.jpg" />
     <EmbeddedResource Include="Images\eggs_benedict.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViewCells\RecipeCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViewCells\RecommendedRecipeCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
