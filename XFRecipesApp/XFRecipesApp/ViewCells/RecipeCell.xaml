@@ -12,7 +12,7 @@
                                                    TrueValue="#16CA86" FalseValue="#FF4081"/>
             </ResourceDictionary>
         </ContentView.Resources>
-        <ContentView Margin="10">
+        <ContentView Style="{StaticResource OverallCellContentStyle}">
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
@@ -26,48 +26,35 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-
-                <BoxView Color="#3F51B5" Grid.Row="0" 
-                         Grid.Column="0" Grid.ColumnSpan="3" />
-
-                <Label Text="{Binding MealType}" TextColor="White" 
-					FontSize="Large" VerticalTextAlignment="Center" 
-                    Margin="10,0,0,0"
-					Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
-
-                <Image BackgroundColor="Gray" Aspect="AspectFill" 
-					    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
-                       Source="{Binding ImageName, Converter={StaticResource imageConvert}}"/>
-
-                <BoxView Color="#757575" Opacity=".25"
-								    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
-
+                <BoxView Color="{StaticResource AlternateAccent}" 
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                <Label Text="{Binding MealType}" TextColor="{StaticResource LightText}" 
+				FontSize="Large" VerticalTextAlignment="Center" Margin="10,0,0,0" 
+				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                <Image Aspect="AspectFill"
+				Source="{Binding ImageName, Converter={StaticResource imageConvert}}"
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+                <BoxView Color="{StaticResource SecondaryText}" Opacity=".25" 
+				Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
                 <Label Text="{Binding RecipeName}" TextColor="White" 
-					   VerticalOptions="Center" FontSize="28" 
-                       FontAttributes="Bold" HorizontalOptions="Start"
-					   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
-
+				Margin="-30,5,0,0" FontSize="28" FontAttributes="Bold" 
+				Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
                 <BoxView Color="{Binding WillMakeAgain, Converter={StaticResource colorConvert}}"
-						Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
-
-                <BoxView Color="#F6F6F6" Grid.Row="3" 
-                         Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" />
-
-                <Label Text="{Binding PreparationTime, StringFormat='{0} prep'}" Margin="10,5,0,0" 
-					   FontSize="Small" TextColor="#757575"
-					   Grid.Row="3" Grid.Column="0" />
-
-                <Label Text="{Binding CookTime, StringFormat='{0} cook'}" Margin="0,5,0,0" 
-					    FontSize="Small" TextColor="#757575"
-						Grid.Row="3" Grid.Column="1" />
-
-                <Label Text="{Binding NumberOfServings, StringFormat='serves {0}'}" Margin="0,5,0,0" 
-						FontSize="Small" TextColor="#757575"
-						Grid.Row="3" Grid.Column="2" />
-
-                <Label Text="View Recipe >" Font="Micro" HorizontalTextAlignment="End" 
-						Margin="0,5,10,0" TextColor="#4CAF50" FontAttributes="Bold"
-						Grid.Row="4" Grid.Column="2" />
+				Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+                <BoxView Color="{StaticResource LightPrimaryBackground}" 
+				Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+                <Label Text="{Binding PreparationTime, StringFormat='{0} prep'}" 
+				Margin="10,5,0,0" Style="{StaticResource CellPrepDetailsStyle}"
+				Grid.Row="3" Grid.Column="0" />
+                <Label Text="{Binding CookTime, StringFormat='{0} cook'}" 
+				Style="{StaticResource CellPrepDetailsStyle}"
+				Grid.Row="3" Grid.Column="1" />
+                <Label Text="{Binding NumberOfServings, StringFormat='serves {0}'}" 
+				Style="{StaticResource CellPrepDetailsStyle}"
+				Grid.Row="3" Grid.Column="2" />
+                <Label Text="View Recipe &gt;" Font="Micro" HorizontalTextAlignment="End" 
+				Margin="0,5,10,0" TextColor="{StaticResource Accent}" FontAttributes="Bold" 
+				Grid.Row="4" Grid.Column="2" />
             </Grid>
         </ContentView>
     </ContentView>

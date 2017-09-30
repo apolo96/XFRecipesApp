@@ -10,6 +10,9 @@
             <template:RecipeDataTemplateSelector x:Key="recipeDataTemplate"/>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ChangeTheme" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{x:Static storage:RecipesStorage.AllRecipesGroup}"
                   GroupDisplayBinding="{Binding Title}"
@@ -17,7 +20,9 @@
                   ItemTemplate="{StaticResource recipeDataTemplate}"
                   IsGroupingEnabled="True"
                   HasUnevenRows="True"
-                  SeparatorVisibility="None">
+                  x:Name="recipeList"
+                  SeparatorVisibility="None"
+                  ItemSelected="ListView_ItemSelected">
         </ListView>
     </ContentPage.Content>
 </ContentPage>
