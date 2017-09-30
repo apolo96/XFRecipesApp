@@ -13,10 +13,19 @@ namespace XFRecipesApp.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RecipeDetailPage : ContentPage
 	{
+        RecipesModel _recipe;
+
 		public RecipeDetailPage (RecipesModel recipe)
 		{
 			InitializeComponent ();
+            _recipe = recipe;
             BindingContext = recipe;
 		}
-	}
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            var editRecipePage = new NavigationPage(new EditRecipePage(_recipe));
+            await Navigation.PushModalAsync(editRecipePage);
+        }
+    }
 }
