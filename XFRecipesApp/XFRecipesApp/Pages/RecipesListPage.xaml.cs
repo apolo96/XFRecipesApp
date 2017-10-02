@@ -30,5 +30,10 @@ namespace XFRecipesApp.Pages
             await Navigation.PushAsync(new RecipeDetailPage(recipe));
             recipeList.SelectedItem = null;
         }
+
+        private async void goToAddRecipe(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new EditRecipePage()));
+        }
     }
 }

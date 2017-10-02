@@ -1,36 +1,169 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace XFRecipesApp.Models
 {
-    public class RecipesModel
+    public class RecipesModel : INotifyPropertyChanged
     {
-        public string RecipeName { get; set; }
+        string _recipeName;
+        public string RecipeName
+        {
+            get { return _recipeName; }
+            set
+            {
+                _recipeName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RecipeName)));
+            }
+        }
 
-        public string PreparationTime { get; set; }
+        string _preparationTime;
+        public string PreparationTime
+        {
+            get { return _preparationTime; }
+            set
+            {
+                _preparationTime = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PreparationTime)));
+            }
+        }
 
-        public string CookTime { get; set; }
+        string _cookTime;
+        public string CookTime
+        {
+            get
+            {
+                return _cookTime;
+            }
+            set
+            {
+                _cookTime = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CookTime)));
+            }
+        }
 
-        public int NumberOfServings { get; set; }
+        int _numberOfServings;
+        public int NumberOfServings
+        {
+            get
+            {
+                return _numberOfServings;
+            }
+            set
+            {
+                _numberOfServings = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NumberOfServings)));
+            }
+        }
 
-        public bool WillMakeAgain { get; set; }
+        bool _willMakeAgain;
+        public bool WillMakeAgain
+        {
+            get
+            {
+                return _willMakeAgain;
+            }
+            set
+            {
+                _willMakeAgain = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WillMakeAgain)));
+            }
+        }
 
-        public string MealType { get; set; }
+        string _mealType;
+        public string MealType
+        {
+            get
+            {
+                return _mealType;
+            }
+            set
+            {
+                _mealType = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(MealType)));
+            }
+        }
 
-        public string Difficulty { get; set; }
+        string _difficulty;
+        public string Difficulty
+        {
+            get
+            {
+                return _difficulty;
+            }
+            set
+            {
+                _difficulty = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Difficulty)));
+            }
+        }
 
-        public string Ingredients { get; set; }
+        string _ingredient;
+        public string Ingredients
+        {
+            get
+            {
+                return _ingredient;
+            }
+            set
+            {
+                _ingredient = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ingredients)));
+            }
+        }
 
-        public string Directions { get; set; }
+        string _directions;
+        public string Directions
+        {
+            get
+            {
+                return _directions;
+            }
+            set
+            {
+                _directions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Directions)));
+            }
+        }
 
-        public string ImageName { get; set; }
+        string _imageName;
+        public string ImageName
+        {
+            get
+            {
+                return _imageName;
+            }
+            set
+            {
+                _imageName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ImageName)));
+            }
+        }
 
-        public bool IsRecommended { get; set; }
+        bool _isRecommended;
+        public bool IsRecommended
+        {
+            get
+            {
+                return _isRecommended;
+            }
+            set
+            {
+                _isRecommended = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsRecommended)));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
+    /** Using the two classes below to set the pickers off of
+		Due to pickers being unable to bind to enums, these will
+		serve as an enum for the MealType and Difficulty properties
+		of the Recipe class **/
     public static class Difficulty
     {
         public static string Easy = "Easy";

@@ -11,7 +11,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Change" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Icon="add.png" Clicked="goToAddRecipe"/>
+        <ToolbarItem Icon="change.png" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{x:Static storage:RecipesStorage.AllRecipesGroup}"

@@ -7,7 +7,8 @@
              xmlns:data="clr-namespace:XFRecipesApp.Models"
              Title="Recipe">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked"/>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <TableView Intent="Form" HasUnevenRows="true">
@@ -25,7 +26,8 @@
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
-                                <Entry x:Name="recipeNameEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+                                <Entry x:Name="recipeNameEntry" HorizontalOptions="FillAndExpand" 
+                                       HorizontalTextAlignment="End"
 										Text="{Binding RecipeName}">
                                     <Entry.Triggers>
                                         <EventTrigger Event="TextChanged">
@@ -48,7 +50,8 @@
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
-                                <Entry x:Name="prepTimeEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+                                <Entry x:Name="prepTimeEntry" HorizontalOptions="FillAndExpand" 
+                                       HorizontalTextAlignment="End" Keyboard="Numeric"
 										Text="{Binding PreparationTime}" />
                             </StackLayout>
                         </ContentView>
@@ -65,7 +68,8 @@
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
-                                <Entry x:Name="cookTimeEntry" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"
+                                <Entry x:Name="cookTimeEntry" HorizontalOptions="FillAndExpand" 
+                                       HorizontalTextAlignment="End" Keyboard="Numeric"
 										Text="{Binding CookTime}" />
                             </StackLayout>
                         </ContentView>
@@ -82,7 +86,9 @@
                                         </DataTrigger>
                                     </Label.Triggers>
                                 </Label>
-                                <Entry Text="{Binding NumberOfServings}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" x:Name="servingsEntry">
+                                <Entry Text="{Binding NumberOfServings}" HorizontalOptions="FillAndExpand" 
+                                       HorizontalTextAlignment="End" Keyboard="Numeric"
+                                       x:Name="servingsEntry">
                                     <Entry.Behaviors>
                                         <behavior:NumericEntryBehavior />
                                     </Entry.Behaviors>
